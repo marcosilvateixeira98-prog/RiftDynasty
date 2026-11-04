@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIFT DYNASTY - Flash (ActionScript 3)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#1a1a22 repeating-linear-gradient(45deg,#1d1d27 0 12px,#191921 12px 24px);font-family:Verdana,Tahoma,sans-serif;color:#ddd;display:flex;flex-direction:column;align-items:center}
+header{width:100%;background:linear-gradient(#3a3a4a,#22222c);border-bottom:3px solid #42e2b8;padding:10px 20px;text-align:center}
+header h1{margin:0;font-size:22px;letter-spacing:.15em;color:#42e2b8}
+header small{color:#999}
+#stage{margin:18px auto;width:min(1000px,96vw);aspect-ratio:1000/640;background:#000;border:6px solid #3c3c4c;border-radius:6px;box-shadow:0 0 0 2px #000,0 10px 40px #000c}
+#stage ruffle-player,#stage ruffle-embed{width:100%;height:100%;display:block}
+footer{font-size:12px;color:#889;margin-bottom:20px;text-align:center}
+</style>
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.RufflePlayer.config = {
+    autoplay: "on",
+    unmuteOverlay: "hidden",
+    letterbox: "on",
+    contextMenu: "off",
+    splashScreen: false
+  };
+</script>
+<script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+<header><h1>RIFT DYNASTY</h1><small>Jogo de gerenciamento &bull; ActionScript 3 (SWF) executado via Ruffle</small></header>
+<div id="stage"></div>
+<footer>Seu progresso fica salvo neste navegador (SharedObject).<br>Use a roda do mouse para rolar as telas.</footer>
+<script>
+  window.addEventListener("load", function () {
+    var ruffle = window.RufflePlayer.newest();
+    var player = ruffle.createPlayer();
+    document.getElementById("stage").appendChild(player);
+    player.load("RiftDynasty.swf");
+  });
+</script>
+</body>
+</html>
